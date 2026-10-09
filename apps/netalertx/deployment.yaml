@@ -23,18 +23,18 @@ spec:
     spec:
       hostNetwork: false
 
-      initContainers:
-        - name: initialize-data-directory
-          image: busybox:1.37
-          command:
-            - sh
-            - -ec
-            - |
-              mkdir -p /data/config /data/db
-              chown -R 20211:20211 /data
-          volumeMounts:
-            - name: data
-              mountPath: /data
+      # initContainers:
+      #   - name: initialize-data-directory
+      #     image: busybox:1.37
+      #     command:
+      #       - sh
+      #       - -ec
+      #       - |
+      #         mkdir -p /data/config /data/db
+      #         chown -R 20211:20211 /data
+      #     volumeMounts:
+      #       - name: data
+      #         mountPath: /data
 
       containers:
         - name: netalertx
