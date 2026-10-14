@@ -25,7 +25,5 @@ resources:
   - kutt
   - unifi
   - adguardhome-sync
-  - navidrome
-  - explo
   - iptv-epg
   - linkwarden
