@@ -27,3 +27,4 @@ resources:
   - adguardhome-sync
   - iptv-epg
   - linkwarden
+  - proxmox
