@@ -4,7 +4,7 @@ kind: EndpointSlice
 metadata:
   name: external-proxmmox-slice
   labels:
-    kubernetes.io/service-name: external-proxmmox
+    kubernetes.io/service-name: external-proxmox
 addressType: IPv4
 ports:
   - name: https
