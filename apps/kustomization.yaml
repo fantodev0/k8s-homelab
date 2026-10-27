@@ -28,4 +28,4 @@ resources:
   - iptv-epg
   - linkwarden
   - proxmox
-  - bmc
+  - ipmi
