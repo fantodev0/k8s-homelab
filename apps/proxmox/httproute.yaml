@@ -1,0 +1,40 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+    name: proxmox-route
+spec:
+    parentRefs:
+        - name: gatewayapi
+          namespace: traefik
+          sectionName: https
+    hostnames:
+        - ENC[AES256_GCM,data:IgNdgVbZgNoRvnZvPZs/yrM=,iv:16BU4AmR60kFlU/CAPOQqRB9eu4CLzCfcFyB/nfQiPM=,tag:A+5uVdc+W8VTV7MFuENNHg==,type:str]
+    rules:
+        - matches:
+            - path:
+                type: PathPrefix
+                value: /
+          filters:
+            - type: ExtensionRef
+              extensionRef:
+                group: traefik.io
+                kind: Middleware
+                name: default-headers
+          backendRefs:
+            - name: external-proxmox
+              port: 8006
+sops:
+    age:
+        - enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB1SjRRS0tWcG4rTnVNZyty
+            OUVsQVNYb05iTVJMRDgxZDdySUpkTEVCYWd3CitXZUp3c3V5c1lEWTdHOWZjS0lv
+            ZmVzZDE0M0xDYlFaY0NNeTNmTmtrUTQKLS0tIEFpMTRQTlozenk4U3djanhBREZy
+            TjNqTGRyU2RJaElpdVBhcFZCeWZqU0UKNMr3d54K/Yn9mnHy2Ac73DFSdddTDbeV
+            V+lrAdT6MPqIZr7QrRSsmFF3VYDlAqCK1HsJ9EGItyhMGZphOtV4LQ==
+            -----END AGE ENCRYPTED FILE-----
+          recipient: age149cx2m4rwfw6argx9fam62vjtcjgeuepd78ej8f0mcpatdgxdqfslqu454
+    encrypted_regex: ^(hostnames)$
+    lastmodified: "2026-10-27T09:07:16Z"
+    mac: ENC[AES256_GCM,data:LhbNSNJ0+gDGA6w+Nz7qYALuckPVuE9zdSOlv1HfQk25HRhT/UUyJ2UCQZBrRcMFb6RRer4Rn/P8wboj5WMWuprtR9ITSgeAszv3mUZTiE60RiD2wTZu8a5mJpAWAKluiQt4iU/0NMPbB+Z89VaLtJIpnujiFt1Ox+UgYKHwZE0=,iv:qC8VP9Gn8iFfVPzPaAijs3VFQN31W3niIWf//BvZIBk=,tag:wBz0p5rvzC6PvHwz6AkSPQ==,type:str]
+    version: 3.13.3
