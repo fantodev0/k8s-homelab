@@ -8,3 +8,8 @@ resources:
   - httproute.yaml
   - secret.yaml
   - service.yaml
+
+images:
+  - name: kutt/kutt
+    newTag: v3.2.6
+    digest: sha256:fa3d24a89b04e0feb542ed7d3c77993d58dbcc1406e5291a369595d543886146
