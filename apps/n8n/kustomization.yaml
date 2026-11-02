@@ -9,3 +9,8 @@ resources:
   - pvc.yaml
   - secret.yaml
   - service.yaml
+
+images:
+  - name: ghcr.io/n8n-io/n8n
+    newTag: latest
+    digest: sha256:9a8d8dcea75667496695d7810d7e1fe018a65efb36cc499d347f3931b3957b5d

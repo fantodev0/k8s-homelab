@@ -12,3 +12,8 @@ configMapGenerator:
   - name: iptv-epg-channels
     files:
       - channels.xml
+
+images:
+  - name: ghcr.io/iptv-org/epg
+    newTag: master
+    digest: sha256:bac999d7d651bd50abb1ced4829bfbdc5846018fab1b254e2ab617a8299a9ebe

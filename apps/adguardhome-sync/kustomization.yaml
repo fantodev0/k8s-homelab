@@ -5,3 +5,8 @@ resources:
   - configmap.yaml
   - deployment.yaml
   - ../base
+
+images:
+  - name: ghcr.io/bakito/adguardhome-sync
+    newTag: latest
+    digest: sha256:157e509baeef66cd400dae96c955a1e97312670e0285a92ebe2c3465b3e22e67
