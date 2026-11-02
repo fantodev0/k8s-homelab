@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: netbox
-          image: lscr.io/linuxserver/netbox:latest
+          image: lscr.io/linuxserver/netbox@sha256:68281639d3b2085ff2677560ffea6fc70deccf67cf050d524ef47fdea87ec0a1
           imagePullPolicy: Always
 
           ports:

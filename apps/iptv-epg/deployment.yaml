@@ -19,7 +19,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: epg
-          image: ghcr.io/iptv-org/epg:master
+          image: ghcr.io/iptv-org/epg:master@sha256:bac999d7d651bd50abb1ced4829bfbdc5846018fab1b254e2ab617a8299a9ebe
           imagePullPolicy: IfNotPresent
           ports:
             - name: http

@@ -38,7 +38,7 @@ spec:
 
       containers:
         - name: netalertx
-          image: jokobsk/netalertx:26
+          image: jokobsk/netalertx:26@sha256:ebce55cdbccc0f71544e6997541fe81db803b8c8bec3079435b8cd0a40d49b7e
 
           envFrom:
             - configMapRef:
