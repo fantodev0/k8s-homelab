@@ -6,3 +6,4 @@ resources:
   - scheduled-backup.yaml
   - postgres-recovery-external.yaml
   - postgres-recovery.helmrelease.yaml
+  - postgres-backup-config.yaml
