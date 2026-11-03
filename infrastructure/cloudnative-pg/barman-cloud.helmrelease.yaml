@@ -1,0 +1,43 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: plugin-barman-cloud
+  namespace: cnpg-system
+spec:
+  interval: 30m
+  timeout: 15m
+  releaseName: plugin-barman-cloud
+  targetNamespace: cnpg-system
+  chart:
+    spec:
+      chart: plugin-barman-cloud
+      version: 0.8.1
+      sourceRef:
+        kind: HelmRepository
+        name: cloudnative-pg
+        namespace: cnpg-system
+      interval: 12h
+  install:
+    crds: Create
+    remediation:
+      retries: 3
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      retries: 3
+  values:
+    # Chart 0.8.1 publishes Barman Cloud CNPG-I plugin v0.15.1.
+    image:
+      tag: v0.15.1
+      pullPolicy: IfNotPresent
+    sidecarImage:
+      tag: v0.15.1
+    crds:
+      create: true
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: "1"
+        memory: 512Mi

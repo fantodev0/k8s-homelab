@@ -1,0 +1,27 @@
+apiVersion: barmancloud.cnpg.io/v1
+kind: ObjectStore
+metadata:
+  name: postgres-backups
+  namespace: default
+spec:
+  configuration:
+    destinationPath: s3://cnpg-backup/
+    endpointURL: https://s3.netbird.fantocorp.de
+    s3Credentials:
+      accessKeyId:
+        name: s3-creds
+        key: ACCESS_KEY_ID
+      secretAccessKey:
+        name: s3-creds
+        key: ACCESS_SECRET_KEY
+  instanceSidecarConfiguration:
+    env:
+      - name: AWS_REGION
+        value: us-east-1
+      - name: AWS_DEFAULT_REGION
+        value: us-east-1
+      - name: AWS_REQUEST_CHECKSUM_CALCULATION
+        value: when_required
+      - name: AWS_RESPONSE_CHECKSUM_VALIDATION
+        value: when_required
+  retentionPolicy: 30d
