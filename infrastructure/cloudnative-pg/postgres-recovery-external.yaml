@@ -1,0 +1,24 @@
+# Test-only endpoint for validating a recovered cluster before any production
+# cutover. It follows the recovery primary and is intentionally separate from
+# the source cluster's postgres-external Service.
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-recovery-external
+  namespace: default
+  labels:
+    app.kubernetes.io/component: database
+    app.kubernetes.io/managed-by: flux
+    app.kubernetes.io/name: postgresql
+    cnpg.io/cluster: postgres-recovery
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: postgres
+      port: 5432
+      protocol: TCP
+      targetPort: 5432
+  selector:
+    cnpg.io/cluster: postgres-recovery
+    cnpg.io/instanceRole: primary
