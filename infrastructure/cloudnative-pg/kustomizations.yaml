@@ -1,0 +1,39 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cloudnative-pg-plugin
+  namespace: flux-system
+spec:
+  interval: 10m
+  retryInterval: 1m
+  timeout: 15m
+  path: ./infrastructure/cloudnative-pg/bootstrap
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: homelab-services
+    namespace: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cloudnative-pg-backups
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: cloudnative-pg-plugin
+  interval: 10m
+  retryInterval: 1m
+  timeout: 10m
+  path: ./infrastructure/cloudnative-pg/resources
+  prune: true
+  wait: false
+  sourceRef:
+    kind: GitRepository
+    name: homelab-services
+    namespace: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
