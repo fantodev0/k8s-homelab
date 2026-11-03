@@ -12,5 +12,5 @@ resources:
 
 images:
   - name: jokobsk/netalertx
-    newTag: 26
+    newTag: "26"
     digest: sha256:ebce55cdbccc0f71544e6997541fe81db803b8c8bec3079435b8cd0a40d49b7e
