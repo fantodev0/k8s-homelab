@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   configuration:
-    destinationPath: s3://cnpg-backup/
+    destinationPath: s3://cnpg/
     endpointURL: https://s3.netbird.fantocorp.de
     s3Credentials:
       accessKeyId:
