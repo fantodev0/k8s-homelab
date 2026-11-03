@@ -1,6 +1,5 @@
 resources:
   - home-assistant
-  - openspeed
   - adguard
   - uptime-kuma
   - frigate
