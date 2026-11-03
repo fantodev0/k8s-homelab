@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - s3.secrets.yaml
   - objectstore.yaml
-  - postgres-backup-config.yaml
   - scheduled-backup.yaml
   - postgres-recovery-external.yaml
   - postgres-recovery.helmrelease.yaml
