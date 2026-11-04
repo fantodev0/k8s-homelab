@@ -15,5 +15,5 @@ resources:
 
 images:
   - name: deluan/navidrome
-    newTag: 0.64.2
+    newTag: "0.64.2"
     digest: sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52
