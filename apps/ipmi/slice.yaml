@@ -13,6 +13,6 @@ ports:
     port: 443
 endpoints:
   - addresses:
-      - "192.168.31.213"
+      - "192.168.31.214"
     conditions:
       ready: true

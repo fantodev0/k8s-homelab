@@ -13,6 +13,6 @@ ports:
     port: 8007
 endpoints:
   - addresses:
-      - "192.168.31.205"
+      - "192.168.31.212"
     conditions:
       ready: true
