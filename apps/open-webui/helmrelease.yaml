@@ -49,6 +49,16 @@ spec:
           secretKeyRef:
             name: open-webui-secrets
             key: database-url
+      - name: WEBUI_SECRET_KEY
+        valueFrom:
+          secretKeyRef:
+            name: open-webui-secrets
+            key: webui-secret-key
+      - name: CORS_ALLOW_ORIGIN
+        valueFrom:
+          secretKeyRef:
+            name: open-webui-secrets
+            key: cors-allow-origin
 
     websocket:
       enabled: true
