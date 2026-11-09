@@ -27,7 +27,7 @@ spec:
   values:
     fullnameOverride: open-webui
     image:
-      tag: v0.13.2
+      tag: v0.13.3
       pullPolicy: IfNotPresent
 
     ollama:
