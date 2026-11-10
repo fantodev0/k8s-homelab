@@ -9,5 +9,5 @@ resources:
 
 images:
   - name: docker.io/actualbudget/actual-server
-    newTag: 26.11.0
+    newTag: "26.11.0"
     digest: sha256:06cf186569cf58d93e12659ff1a517b65b5b0ebee7050a3991d4bd8a1d398da6
