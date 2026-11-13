@@ -21,11 +21,6 @@ spec:
             group: traefik.io
             kind: Middleware
             name: default-headers
-        - type: ExtensionRef
-          extensionRef:
-            group: traefik.io
-            kind: Middleware
-            name: basic-auth
       backendRefs:
         - name: ittools
           port: 80
